@@ -1,6 +1,11 @@
 import random
 
 
+def show_deck(shoo):
+	for card in shoo:
+		print(card)
+
+
 class Deck:
 
 	def __init__(self, no_of_decks):
@@ -20,9 +25,26 @@ class Deck:
 	def deal_card(self):
 		return self.shoe.pop(0)
 
-	def show_deck(self):
+
+class War(Deck):
+
+	def __init__(self):
+		super().__init__(1)
+		self.player1 = []
+		self.player2 = []
+
+	def set_up_game(self):
 		for card in self.shoe:
-			print(card)
+			if len(self.shoe) == 0:
+				print("Players Dealt")
+			else:
+				self.player1.append(card)
+				self.player2.append(card)
+
+	def collect_tribute(self):
+
+
+
 
 
 deck = Deck(1)
